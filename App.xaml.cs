@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace EO_Mod_Manager
@@ -46,7 +41,7 @@ namespace EO_Mod_Manager
 
         void OnDispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
-            string errorMessage = string.Format("An unhandled exception occurred: {0}", e.Exception.Message);
+            string errorMessage = string.Format("An unhandled exception occurred: {0}", e.Exception);
             MessageBox.Show(errorMessage, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             if (!(e is System.Windows.Markup.XamlParseException))
                 e.Handled = true;
